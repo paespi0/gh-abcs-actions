@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 jobs:
-  
+      
   js-custom-actions:
     runs-on: ubuntu-latest
     steps:
@@ -57,3 +57,10 @@ jobs:
           catFact: ${{steps.cat.outputs.fact}}
           #issueTitle: "A cat fact for you from ${{ github.repository_owner }}"
           issue-title: "A joke for you from custom actions workflow" 
+          
+        
+      - name: Hello world action step
+        id: hello
+        uses: paespi0/-hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: 'Mona the Octocat'
